@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Build process
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tools used in bootstrapping the application
 
-## Available Scripts
+- JavaScript
+- React JS
+- Sass
+- Context API and Hooks (State Management)
 
-In the project directory, you can run:
+##
 
-### `yarn start`
+This application has a basic sign in page and a dashboard page. For one to fully gain access to the dashboard page, a form of authentication needs to happen to pass one in. Since we have no backend system attached to this application, it automatically passes anyone and any details provided to the login form.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You might wonder what happens behind the scene when a user enters an email and password right in the input field for username and passwords. Well let me walk you through on what happpens behind the scene.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Let us start with the main block of code responsible for taking the user input and running some checks. It is no other code than the "CONTEXT API" file.
 
-### `yarn test`
+## Code Breakdown Structure and Explanation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Context API Logic
 
-### `yarn build`
+Remember that among the tools mentioned, we talked about context api which happens to be the state management tool adopted for this project. The reason it was used was because of how easy it is to setup and no additional installation is needed to get it up and running.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Okay so righ in our codebase, we have a folder called "contexts" which is where we can find our codes responsible for authenticating a user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the types.js file, you can find the different types we want to use in our context logic. There we exported the LOGIN and REGISTER type.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then again we can find the auth-context folder which houses the authentication logic. We did it this way for easy identification and good structuring of our codebase. Now in this folder, the types we exported from the types folder will come to be useful because we will use it to create our logic.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now in the auth-context folder, we can find three more files which are the AuthContext, AuthReducer and the AuthState file. Let us explain what is contained in each file.
