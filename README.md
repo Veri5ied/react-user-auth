@@ -59,4 +59,18 @@ Now is time for us to make use of the context logics we created. But before we c
 
 Once this is done, we can import the AuthContext file in our Login.jsx file and then the useContext hook for us to be able to use the context file in the login file.
 
-We have to destructure the userLogin from AuthContext then pass on the right parameters which are the email and password in order to authenticate a user
+We have to destructure the userLogin from AuthContext then pass on the right parameters which are the email and password in order to authenticate a user.
+See screenshot below:
+
+You might ask yourself how does the app know when a user is authenticated? Well we have a file called the PrivateRoutes which takes in the authcontext file via import, we get a user out from the authcontext and if a user exists, we use the Outlet from react router dom to allow the use pass in otherwise we use the Navigate from react router dom to push them to login.
+See screenshot below:
+
+### The custom Hook to Get User
+
+So part of the task was to use a custom hook to get a user from localstorage and that brings us to the useLST hook created. This useLST hook extracts localstorage value. The main buildtools for this includes the useState and useEffect.
+
+The useLST hook takes in the key (key of the localstorage value) and the initialValue.
+
+We then make use of the state to get item by key from localstorage and we need to check if an item exists inorder to return a JSON parsed item otherwise we return the initial value. Now because this key and value can change from time to time, we had to monitor the change using the useEffect hooks which took the key and value as dependencies and hence watch whenever there is an update across the app. See screenshot below:
+
+OYA ADD YOUR CONCLUSION. CIAO
